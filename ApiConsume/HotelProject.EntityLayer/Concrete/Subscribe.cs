@@ -10,5 +10,6 @@ namespace HotelProject.EntityLayer.Concrete
 	{
 		public int SubscribeID { get; set; }
 		public string Mail { get; set; }
+		public int sdq { get; set; }
 	}
 }
