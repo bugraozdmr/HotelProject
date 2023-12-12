@@ -10,7 +10,7 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
-	public class EFTestimonialDal : GenericRepository<Staff> , IStaffDal
+	public class EFTestimonialDal : GenericRepository<Testimonial> , ITestimonialDal
 	{
 		public EFTestimonialDal(Context context) : base(context)
 		{
