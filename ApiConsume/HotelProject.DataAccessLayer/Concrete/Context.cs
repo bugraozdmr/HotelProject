@@ -12,6 +12,7 @@ namespace HotelProject.DataAccessLayer.Concrete
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
+			// trusted certificated olmazsa çalışmaz
 			optionsBuilder.UseSqlServer(@"server=WINDOWSXP\MSSQLSERVER01;
 			initial catalog=ApiDb;integrated security=true;TrustServerCertificate=True");
 		}
