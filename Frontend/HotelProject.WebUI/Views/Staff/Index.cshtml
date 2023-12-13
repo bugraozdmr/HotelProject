@@ -1,8 +1,32 @@
-﻿
+﻿@model List<StaffViewModel>
+@{
+    // _ViewImports sayesinde direkt isim ile çağırdık View'i
+}
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<table class="table table-bordered">
+	<tr class="thead-dark">
+		<th>#</th>
+		<th>Name</th>
+		<th>Rank</th>
+		<th>Delete</th>
+		<th>Update</th>
+		<th>Details</th>
+	</tr>
+	@foreach (var element in Model)
+	{
+		<tr>
+			<td>@element.StaffID</td>
+			<td>@element.Name</td>
+			<td>@element.Title</td>
+			<td><a href="#" class="btn btn-outline-danger">delete</a></td>
+			<td><a href="#" class="btn btn-outline-warning">update</a></td>
+			<td><a href="#" class="btn btn-outline-success">details</a></td>
+		</tr>
+	}
+</table>
 
+<a href="/Staff/addStaff" class="btn btn-info">New Personnel</a>
