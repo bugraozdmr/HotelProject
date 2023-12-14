@@ -1,0 +1,32 @@
+﻿@model ShowDetailsViewModel
+@{
+    ViewData["Title"] = "ShowDetails";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+@{
+	<h4>@Model.Name info</h4>
+
+	<table class="table table-bordered">
+		<tr class="thead-dark">
+			<th>#</th>
+			<th>Name</th>
+			<th>Rank</th>
+			<th>SocialMedia1</th>
+			<th>SocialMedia2</th>
+			<th>SocialMedia3</th>
+		</tr>
+	
+		<tr>
+			<td>@Model.StaffID</td>
+			<td>@Model.Name</td>
+			<td>@Model.Title</td>
+			<td>@Model.SocialMedia1</td>
+			<td>@Model.SocialMedia2</td>
+			<td>@Model.SocialMedia3</td>
+		</tr>
+	
+	</table>
+
+}
+

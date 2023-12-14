@@ -63,5 +63,52 @@ namespace HotelProject.WebUI.Controllers
             // hata dönmesin diye geçici yazıldı -- boş bırakamazdım
             return View("Index");
         }
-	}
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateStaff(int id)
+        {
+            var client = _httpClientFactory.CreateClient();     // getbyid gibi çalışır
+            var responseMessage = await client.GetAsync($"http://localhost:5051/api/Staff/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsondata = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsondata);
+
+                // model gidecekti ve biz o modeli doldurup yolladık
+                return View(values);
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateStaff(UpdateStaffViewModel model)
+        {
+            var client = _httpClientFactory.CreateClient();     
+            var jsonData = JsonConvert.SerializeObject(model);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8,"application/json");
+            var responseMessage = await client.PutAsync("http://localhost:5051/api/Staff",stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                // return olmazsa assa iner
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ShowDetails(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:5051/api/Staff/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                Console.WriteLine(jsonData);
+                var value = JsonConvert.DeserializeObject<ShowDetailsViewModel>(jsonData);
+
+                return View(value);
+            }
+            return View();
+        }
+    }
 }
