@@ -16,7 +16,7 @@ namespace HotelProject.WebApi.Controllers
 		{
 			_staffService = staffService;
 		}
-
+		// içleri boş giderse sadece get-post ile belirleme yapar ./staff - get req ile // onun yerine ./staf/list olsa daha iyi onun için httpget("list");
 		[HttpGet]
 		public IActionResult StaffList()
 		{
