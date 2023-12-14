@@ -9,5 +9,6 @@ namespace HotelProject.BusinessLayer.Abstract
 {
 	public interface ITestimonialService : IGenericService<Testimonial>
 	{
-	}
+        // generic dışında başka methodlar tanımlamak mümkün 
+    }
 }

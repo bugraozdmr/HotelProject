@@ -21,6 +21,7 @@ namespace HotelProject.WebApi.Controllers
 		public IActionResult StaffList()
 		{
 			var values = _staffService.TGetList();
+			// response içinde values'de dönsün
 			return Ok(values);
 		}
 
