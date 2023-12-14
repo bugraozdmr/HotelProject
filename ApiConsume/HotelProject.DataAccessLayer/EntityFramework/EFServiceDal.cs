@@ -10,6 +10,7 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.DataAccessLayer.EntityFramework
 {
+	// yarın başka bir context kullancak olsak direkt program.cs'den context değişir mis gibi çalışır
 	public class EFServiceDal : GenericRepository<Service> , IServicesDal
 	{
 		public EFServiceDal(Context context) : base(context)

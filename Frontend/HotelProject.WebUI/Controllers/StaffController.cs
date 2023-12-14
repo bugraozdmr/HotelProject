@@ -60,6 +60,7 @@ namespace HotelProject.WebUI.Controllers
             {
                 return RedirectToAction("index");
             }
+            // hata dönmesin diye geçici yazıldı -- boş bırakamazdım
             return View("Index");
         }
 	}
