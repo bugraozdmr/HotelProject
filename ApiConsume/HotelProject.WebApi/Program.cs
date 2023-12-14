@@ -30,6 +30,13 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EFTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+//builder.Services.AddScoped<>();
+
+
+
 // herhangi kaynak method header'a izin verildi
 builder.Services.AddCors(opt =>
 {
