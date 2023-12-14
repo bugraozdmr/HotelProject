@@ -32,7 +32,7 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
 
 
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.AddScoped<>();
 
 

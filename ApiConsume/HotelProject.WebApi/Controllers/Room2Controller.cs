@@ -34,15 +34,23 @@ namespace HotelProject.WebApi.Controllers
 			{
 				return BadRequest();
 			}
+			// artık hata fırlatıyor -- json'da
+			var values = _mapper.Map<Room>(roomAddDto);
+			_roomService.TInsert(values);
+			return Ok();
+		}
 
-			var values = _mapper.Map<Room>(RoomAddDto);
-			/*var result = _roomService.TInsert(values); -- void metodu atama yapmak istiyorsun*/
-
-			if (result == null)
+		[HttpPut]
+		public IActionResult UpdateRoom(UpdateRoomDto updateRoomDto)
+		{
+			if (!ModelState.IsValid)
 			{
 				return BadRequest();
 			}
-			return Ok(_mapper.Map<RoomAddDto>(result));
+
+			var values = _mapper.Map<Room>(updateRoomDto);
+			_roomService.TUpdate(values);
+			return Ok("successfully edited");
 		}
 	}
 }
