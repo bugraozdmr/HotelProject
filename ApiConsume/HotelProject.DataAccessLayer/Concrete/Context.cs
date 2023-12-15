@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelProject.DataAccessLayer.Concrete
 {
-	public class Context : DbContext
+	// int verme sebebi idler intler otomatik artıyor -- string olsada olurdu
+	public class Context : IdentityDbContext<AppUser,AppRole,int>
 	{
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
