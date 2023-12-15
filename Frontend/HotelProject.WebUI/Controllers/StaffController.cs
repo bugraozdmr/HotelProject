@@ -109,5 +109,12 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
+
+		// saka amacli sonra siliir -- http://localhost:5155/kubmud/ çağırma şekli direkt
+		[HttpGet("/kubmud")]
+        public ActionResult hidden()
+        {
+            return View();
+        }
     }
 }
