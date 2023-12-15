@@ -1,0 +1,31 @@
+﻿@model ResultServiceDto
+@{
+    ViewData["Title"] = "showDetails";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h4>showDetails</h4>
+
+
+
+@{
+	<h4>@Model.Title info</h4>
+
+	<table class="table table-bordered">
+		<tr class="thead-dark">
+			<th>#</th>
+			<th>Icon</th>
+			<th>Title</th>
+			<th>Description</th>
+		</tr>
+
+		<tr>
+			<td>@Model.ServiceID</td>
+			<td>@Model.ServiceIcon</td>
+			<td>@Model.Title</td>
+			<td>@Model.Description</td>
+		</tr>
+
+	</table>
+
+}

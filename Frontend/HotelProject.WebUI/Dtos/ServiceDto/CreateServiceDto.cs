@@ -16,6 +16,12 @@ namespace HotelProject.WebUI.Dtos.ServiceDto
 		[MaxLength(40 , ErrorMessage = "Title's max length can only be 40 characters")]
 		public string Title { get; set; }
 		// şuan olmasada olur
-		public string Description { get; set; }
+		private string _description;
+
+		public string Description
+		{	//bos gelirse buna esitle // Null deger istemiyor -- cok ugrastim
+			get => _description ?? "Default";
+			set => _description = value;
+		}
 	}
 }
