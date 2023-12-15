@@ -45,7 +45,7 @@ namespace HotelProject.WebUI.Controllers
 				return View();
 			}
 			var client = _client.CreateClient();
-			// bu sefer gelen değeri class türüne çevirecek
+			// string lazım -- string json çevirilip gönderilir
 			var jsondata = JsonConvert.SerializeObject(createServiceDto);
 			StringContent content = new StringContent(jsondata, Encoding.UTF8, "application/json");
 			var responseMessage = await client.PostAsync("http://localhost:5051/api/Service", content);
@@ -72,7 +72,7 @@ namespace HotelProject.WebUI.Controllers
 		[HttpGet]
 		public async Task<IActionResult> UpdateService(int id)
 		{
-			var client = _client.CreateClient();     // getbyid gibi çalışır
+			var client = _client.CreateClient();     // getbyid çalışır -- api'dan o işlemi istiyoruz
 			var responseMessage = await client.GetAsync($"http://localhost:5051/api/Service/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
@@ -91,7 +91,7 @@ namespace HotelProject.WebUI.Controllers
 			{
 				return View(model);
 			}
-			Console.WriteLine(323);
+			
 			var client = _client.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(model);
 			StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
