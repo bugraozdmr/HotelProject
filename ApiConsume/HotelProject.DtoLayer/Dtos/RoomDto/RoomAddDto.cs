@@ -9,6 +9,7 @@ namespace HotelProject.DtoLayer.Dtos.RoomDto
 {
 	public class RoomAddDto
 	{
+		// vermezse null olarak kaydeder onda sorun yok
 		[Required(ErrorMessage = "Room number needed")]
 		public string RoomNumber { get; set; }
 		public string RoomCoverImage { get; set; }

@@ -47,7 +47,7 @@ namespace HotelProject.WebApi.Controllers
 			{
 				return BadRequest();
 			}
-
+			// room olarak uygun dto gidiyor ...
 			var values = _mapper.Map<Room>(updateRoomDto);
 			_roomService.TUpdate(values);
 			return Ok("successfully edited");
