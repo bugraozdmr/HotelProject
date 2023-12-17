@@ -25,10 +25,7 @@ namespace HotelProject.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                // lockout ve persistant kapalı
-                Console.WriteLine(loginUserDto.Username,1234,loginUserDto.Password);
-
-
+                // lockout(yanlis girme sayisi -- ban vs.) ve persistant kapalı
                 var result = await _signInManager.PasswordSignInAsync(loginUserDto.Username, loginUserDto.Password,false,false);
                 if (result.Succeeded)
                 {
@@ -39,7 +36,6 @@ namespace HotelProject.WebUI.Controllers
                     return View();
                 }
             }
-            Console.WriteLine(loginUserDto.Username, 45, loginUserDto.Password);
             return View();
         }
     }
