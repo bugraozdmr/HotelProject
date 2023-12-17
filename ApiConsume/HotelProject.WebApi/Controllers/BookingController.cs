@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.WebApi.Controllers
 {
-    /*[Route("api/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class BookingController : ControllerBase
     {
-        private readonly IBookingService _bookingService;
+        /*private readonly IBookingService _bookingService;
 
         public BookingController(IBookingService service)
         {
