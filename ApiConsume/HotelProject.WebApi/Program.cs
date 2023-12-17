@@ -21,7 +21,7 @@ builder.Services.AddScoped<IStaffDal, EFStaffDal>();
 builder.Services.AddScoped<IStaffService, StaffManager>();
 
 builder.Services.AddScoped<IServicesDal, EFServiceDal>();
-builder.Services.AddScoped<IServiceService, IServiceManager>();
+builder.Services.AddScoped<IServiceService, ServiceManager>();
 
 builder.Services.AddScoped<IRoomDal, EFRoomDal>();
 builder.Services.AddScoped<IRoomService, RoomManager>();

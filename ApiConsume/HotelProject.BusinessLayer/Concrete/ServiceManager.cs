@@ -9,11 +9,11 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-	public class IServiceManager : IServiceService
+	public class ServiceManager : IServiceService
 	{
 		private readonly IServicesDal _servicesDal;
 
-		public IServiceManager(IServicesDal servicesDal)
+		public ServiceManager(IServicesDal servicesDal)
 		{
 			_servicesDal = servicesDal;
 		}

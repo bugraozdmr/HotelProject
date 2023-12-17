@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Frontend\HotelProject.WebUI\HotelProject.WebUI.csproj" />
     <ProjectReference Include="..\HotelProject.BusinessLayer\HotelProject.BusinessLayer.csproj" />
     <ProjectReference Include="..\HotelProject.DataAccessLayer\HotelProject.DataAccessLayer.csproj" />
     <ProjectReference Include="..\HotelProject.DtoLayer\HotelProject.DtoLayer.csproj" />
