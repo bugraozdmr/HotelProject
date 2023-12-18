@@ -10,52 +10,48 @@
 
 <body>
     <div class="container-xxl bg-white p-0">
-	    <!-- Spinner  -->
+	    
 	    @await Component.InvokeAsync("_SpinnerPartial");
-		<!-- Navbar -->
+		
 		@await Component.InvokeAsync("_NavBarPartial");
 
-		<!-- Slider-->
+		
 		@await Component.InvokeAsync("_SliderPartial");
         
-        <!-- Booking -->
+        
 		@await Component.InvokeAsync("_BookingPartial");
     
 
-		<!-- About -->
+		
 		@await Component.InvokeAsync("_AboutPartial");
        
-        <!-- Room -->
+        
         @await Component.InvokeAsync("_RoomPartial");
         
-        <!-- Video -->
+        
 		@await Component.InvokeAsync("_TrailerPartial");
 
         
-    <!-- Video Start -->
-
-        <!-- Service -->
+    
         @await Component.InvokeAsync("_ServicePartial");
         
-        <!-- Testimonial -->
+        
 		@await Component.InvokeAsync("_TestimonialPartial");
         
-        <!-- Team -->
+        
 		@await Component.InvokeAsync("_TeamPartial");
         
-        <!-- Subscribe -->
+        
 		@await Component.InvokeAsync("_SubscribePartial");
-	    <!-- Newsletter -->
+	    
         
 
-	    <!-- Footer -->
+	    
 		@await Component.InvokeAsync("_FooterPartial");
-        <!-- Footer End -->
-        <!-- Back to Top -->
+       
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
-    <!-- JavaScript Libraries -->
 	@await Component.InvokeAsync("_ScriptsPartial");
 </body>
 
