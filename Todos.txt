@@ -1,2 +1,4 @@
 Api testi ve slagger -- Done
 Register login -- in progress
+
+Front end tasarým düzenlenmesi api - consume

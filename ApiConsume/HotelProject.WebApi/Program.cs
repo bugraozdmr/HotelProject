@@ -33,6 +33,8 @@ builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 builder.Services.AddScoped<ITestimonialDal, EFTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddScoped<IAboutDal, EFAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
 
 // test -- api login
 builder.Services.AddDbContext<Context>();
