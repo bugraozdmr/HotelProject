@@ -30,24 +30,28 @@
 							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="text" class="form-control" asp-for="Name" placeholder="Your Name">
+									@* <span asp-validation-for="Name" class="text-warning"></span> *@
 									<label for="name">Your Name</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="email" class="form-control" asp-for="Mail" placeholder="Your Email">
+									@* <span asp-validation-for="Mail" class="text-warning"></span> *@
 									<label for="email">Your Email</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating date" id="date3" data-target-input="nearest">
 									<input type="text" class="form-control datetimepicker-input" asp-for="CheckIn" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+									@* <span asp-validation-for="CheckIn" class="text-warning"></span> *@
 									<label for="checkin">Check In</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating date" id="date4" data-target-input="nearest">
 									<input type="text" class="form-control datetimepicker-input" asp-for="CheckOut" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+									@* <span asp-validation-for="CheckOut" class="text-warning"></span> *@
 									<label for="checkout">Check Out</label>
 								</div>
 							</div>
@@ -58,6 +62,7 @@
 										<option value="2">Adult 2</option>
 										<option value="3">Adult 3</option>
 									</select>
+									@* <span asp-validation-for="AdultCount" class="text-warning"></span> *@
 									<label for="select1">Select Adult</label>
 								</div>
 							</div>
@@ -68,6 +73,7 @@
 										<option value="2">Child 2</option>
 										<option value="3">Child 3</option>
 									</select>
+									@* <span asp-validation-for="ChildCount" class="text-warning"></span> *@
 									<label for="select2">Select Child</label>
 								</div>
 							</div>
@@ -78,12 +84,14 @@
 										<option value="2">Room 2</option>
 										<option value="3">Room 3</option>
 									</select>
+									@* <span asp-validation-for="RoomCount" class="text-warning"></span> *@
 									<label for="select3">Select A Room</label>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-floating">
 									<textarea class="form-control" placeholder="Special Request" asp-for="SpecialRequest" style="height: 100px"></textarea>
+									@* <span asp-validation-for="SpecialRequest" class="text-warning"></span> *@
 									<label for="message">Special Request</label>
 								</div>
 							</div>
