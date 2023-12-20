@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
 using HotelProject.WebUI.Models.Testimonial;
+using ShowDetailsViewModel = HotelProject.WebUI.Models.Testimonial.ShowDetailsViewModel;
 
 namespace HotelProject.WebUI.Controllers
 {
@@ -40,7 +41,7 @@ namespace HotelProject.WebUI.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> addTestimonial(TestimonialViewModel model)
+		public async Task<IActionResult> addTestimonial(AddTestimonialViewModel model)
 		{
 			var client = _httpClientFactory.CreateClient();
 			// bu sefer gelen değeri class türüne çevirecek
@@ -74,7 +75,7 @@ namespace HotelProject.WebUI.Controllers
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsondata = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<TestimonialViewModel>(jsondata);
+				var values = JsonConvert.DeserializeObject<UpdateTestimonialViewModel>(jsondata);
 
 				// model gidecekti ve biz o modeli doldurup yolladık
 				return View(values);

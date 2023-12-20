@@ -1,5 +1,4 @@
-﻿@model HotelProject.WebUI.Models.Staff.ShowDetailsViewModel
-@* aynı isimlileri böyle belirtiyor *@
+﻿@model HotelProject.WebUI.Models.Testimonial.ShowDetailsViewModel
 @{
     ViewData["Title"] = "ShowDetails";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -13,21 +12,21 @@
 			<th>#</th>
 			<th>Name</th>
 			<th>Rank</th>
-			<th>SocialMedia1</th>
-			<th>SocialMedia2</th>
-			<th>SocialMedia3</th>
+			<th>Description</th>
+			<th>Image</th>
 		</tr>
-	
+
 		<tr>
-			<td>@Model.StaffID</td>
+			<td>@Model.TestimonialID</td>
 			<td>@Model.Name</td>
 			<td>@Model.Title</td>
-			<td>@Model.SocialMedia1</td>
-			<td>@Model.SocialMedia2</td>
-			<td>@Model.SocialMedia3</td>
+			<td>@Model.Description</td>
+			<td>@Model.Image</td>
 		</tr>
-	
+
 	</table>
 
 }
+
+
 
