@@ -38,7 +38,7 @@ builder.Services.AddScoped<IAboutService, AboutManager>();
 
 builder.Services.AddScoped<IBookingDal, EFBookingDal>();
 // service'e atamada manager verdik controller'lar service çaðýrýr interface olarak bunlarý alacak onlar
-builder.Services.AddScoped<IBookingService, IBookingService>();
+builder.Services.AddScoped<IBookingService, BookingManager>();
 
 // test -- api login
 builder.Services.AddDbContext<Context>();

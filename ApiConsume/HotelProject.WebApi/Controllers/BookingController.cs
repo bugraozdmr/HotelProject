@@ -9,7 +9,7 @@ namespace HotelProject.WebApi.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
-        /*private readonly IBookingService _bookingService;
+        private readonly IBookingService _bookingService;
 
         public BookingController(IBookingService service)
         {
@@ -50,6 +50,6 @@ namespace HotelProject.WebApi.Controllers
         {
             var value = _bookingService.TGetById(id);
             return Ok(value);
-        }*/
+        }
     }
 }
