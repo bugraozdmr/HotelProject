@@ -6,6 +6,7 @@ using HotelProject.WebUI.Dtos.RegisterDto;
 using HotelProject.WebUI.Dtos.RoomDto;
 using HotelProject.WebUI.Dtos.ServiceDto;
 using HotelProject.WebUI.Dtos.StaffDto;
+using HotelProject.WebUI.Dtos.SubscribeDto;
 using HotelProject.WebUI.Dtos.TestimonialDto;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 
@@ -30,6 +31,8 @@ namespace HotelProject.WebUI.Mapping
             CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
 
             CreateMap<ResultRoomDto, Room>().ReverseMap();
+
+            CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
 		}
 	}
 }
