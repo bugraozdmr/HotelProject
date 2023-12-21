@@ -26,13 +26,15 @@ namespace HotelProject.WebUI.Controllers
 			return View();
 		}
 
+
+		// burasi id ile de çağırılacak ama sonra !
 		public async Task<IActionResult> ApprovedReservation(ApprovedBookingDto dto)
 		{	// diğer bilgiler null kalamaz gönderme işlemi kesin başarısız olur
 			dto.Status = "approved";
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(dto);
 			StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
-			var responseMessage = await client.PostAsync("http://localhost:5051/api/Booking", content);
+			var responseMessage = await client.PostAsync("http://localhost:5051/api/Booking/UpdateBooking", content);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
