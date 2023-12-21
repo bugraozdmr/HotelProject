@@ -38,7 +38,7 @@ namespace HotelProject.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPut]   // swagger otomatik Service verilerini ayarlayacak bizim için
+        [HttpPut("UpdateBooking")]   // swagger otomatik Service verilerini ayarlayacak bizim için
         public IActionResult UpdateBooking(Booking booking)
         {
             _bookingService.TUpdate(booking);
@@ -50,6 +50,13 @@ namespace HotelProject.WebApi.Controllers
         {
             var value = _bookingService.TGetById(id);
             return Ok(value);
+        }
+
+        [HttpPut("Approved")]
+        public IActionResult Approved(Booking booking)
+        {
+            _bookingService.TBookingStatusChangeApproved(booking);
+            return Ok();
         }
     }
 }
