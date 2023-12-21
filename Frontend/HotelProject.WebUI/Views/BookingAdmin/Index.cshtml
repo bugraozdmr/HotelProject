@@ -31,12 +31,12 @@
 							<tr>
 								<th>@count</th>
 								<td>@item.Name</td>
-								<td>@item.CheckIn</td>
-								<td class="color-primary">@item.CheckOut</td>
+								<td>@(((DateTime)item.CheckIn).ToString("dd-MMM-yyyy"))</td>
+								<td class="color-primary">@(((DateTime)item.CheckOut).ToString("dd-MMM-yyyy"))</td>
 								<td>
 									<span class="badge badge-primary px-2">@item.Status</span>
 								</td>
-								<td><a href="#" class="btn btn-outline-primary">Approve</a></td>
+								<td><a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn btn-outline-primary">Approve</a></td>
 								<td><a href="#" class="btn btn-outline-danger">Deny</a></td>
 								<td><a href="#" class="btn btn-outline-warning">Hold</a></td>
 								<td><a href="#" class="btn btn-outline-info">Update</a></td>
@@ -50,5 +50,3 @@
 		</div>
 	</div>
 </div>
-
-<a href="/Staff/addStaff" class="btn btn-info">New Personnel</a>
