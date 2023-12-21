@@ -1,0 +1,54 @@
+﻿@model List<ResultBookingDto>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+
+	int count = 0;
+}
+
+<!-- col-lg-12 sayfanın tamamını kaplar -->
+<div class="col-lg-12">
+	<div class="card">
+		<div class="card-body">
+			<div class="card-title">
+				<h4>Bookings</h4>
+			</div>
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Check In</th>
+							<th>Check Out</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							count++;
+							<tr>
+								<th>@count</th>
+								<td>@item.Name</td>
+								<td>@item.CheckIn</td>
+								<td class="color-primary">@item.CheckOut</td>
+								<td>
+									<span class="badge badge-primary px-2">@item.Status</span>
+								</td>
+								<td><a href="#" class="btn btn-outline-primary">Approve</a></td>
+								<td><a href="#" class="btn btn-outline-danger">Deny</a></td>
+								<td><a href="#" class="btn btn-outline-warning">Hold</a></td>
+								<td><a href="#" class="btn btn-outline-info">Update</a></td>
+								<td><a href="#" class="btn btn-outline-success">Details</a></td>
+
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<a href="/Staff/addStaff" class="btn btn-info">New Personnel</a>
