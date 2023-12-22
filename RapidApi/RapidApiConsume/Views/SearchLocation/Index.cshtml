@@ -1,0 +1,35 @@
+﻿@model List<SearchLocationIdViewModel>
+
+@{
+	Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container col-9">
+	<br />
+	<!-- form method post olunca yani butona tıklanınca burdaki deger parametre olarak gidiyor ve çalışma oluyor -->
+	@using (Html.BeginForm("Index", "SearchLocation", FormMethod.Post))
+	{
+		<label>City name</label>
+		<input type="text" class="form-control" name="cityName"/>
+		<br/>
+		<button class="btn btn-primary">Click to find id</button>
+	}
+	<table class="table">
+		<thead class="thead-dark">
+		<tr>
+			<th>Location</th>
+			<th></th>
+		</tr>
+		</thead>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<th>@item.dest_id</th>
+			</tr>
+		}
+	</table>
+	<br/>
+	<a href="/BookingByCityId" class="btn btn-outline-dark">Booking Infos</a>
+</div>
